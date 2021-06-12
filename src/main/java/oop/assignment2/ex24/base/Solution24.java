@@ -6,7 +6,6 @@ import java.util.Scanner;
  *  Copyright 2021 first_name last_name
  */
 public class Solution24 {
-    private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
         AnagramChecker ac = new AnagramChecker();
