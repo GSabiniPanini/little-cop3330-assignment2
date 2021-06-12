@@ -7,10 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class AnagramCheckerTest {
 
     @Test
-    void isanagram_note_tone_true()
+    void isanagram_for_anagrams_true()
     {
-        boolean expected = true;
-
         AnagramChecker test = new AnagramChecker();
         test.s1 = "note";
         test.s2 = "tone";
@@ -18,20 +16,18 @@ class AnagramCheckerTest {
         boolean actual = test.isanagram();
 
 
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    void isanagram_note_not_false()
+    void isanagram_for_nonanagrams_false()
     {
-        boolean expected = false;
-
         AnagramChecker test = new AnagramChecker();
         test.s1 = "note";
         test.s2 = "not";
         boolean actual = test.isanagram();
 
 
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 }
