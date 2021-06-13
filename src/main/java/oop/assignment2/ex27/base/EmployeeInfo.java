@@ -10,6 +10,7 @@ public class EmployeeInfo
     Scanner in = new Scanner(System.in);
 
     public String fname, lname, id, zip;
+    public String output = "";
 
     public void readdata()
     {
@@ -33,8 +34,6 @@ public class EmployeeInfo
 
     public boolean validatefnamefilled(String fname)
     {
-        int n = fname.length();
-
         return !fname.isBlank();
     }
 
@@ -48,8 +47,6 @@ public class EmployeeInfo
 
     public boolean validatelnamefilled(String lname)
     {
-        int n = lname.length();
-
         return !lname.isBlank();
     }
 
@@ -102,57 +99,48 @@ public class EmployeeInfo
         if(!this.validatefnamelen(fname))
         {
             counter ++;
-            System.out.println("The first name must be at least 2 characters long.");
+            this.output += ("The first name must be at least 2 characters long.\n");
         }
 
         if(!this.validatelnamelen(lname))
         {
             counter ++;
-            System.out.println("The last name must be at least 2 characters long.");
+            this.output += ("The last name must be at least 2 characters long.\n");
         }
 
         if(!this.validatefnamefilled(fname))
         {
             counter ++;
-            System.out.println("The first name must be filled in.");
+            this.output += ("The first name must be filled in.\n");
         }
 
         if(!this.validatelnamefilled(lname))
         {
             counter ++;
-            System.out.println("The last name must be filled in.");
+            this.output += ("The last name must be filled in.\n");
         }
 
         if(!this.validateid(id))
         {
             counter ++;
-            System.out.println("The employee ID must be in the format of AA-1234.");
+            this.output += ("The employee ID must be in the format of AA-1234.\n");
         }
 
         if(!this.validatezip(zip))
         {
             counter ++;
-            System.out.println("The zipcode must be a 5 digit number.");
+            this.output += ("The zipcode must be a 5 digit number.\n");
         }
+
+        if(counter == 0)
+            this.output = "There were no errors found.";
 
         return counter;
     }
 
-    public boolean isoutput(int counter)
+    public String getoutput()
     {
-        boolean flag = false;
-        if(counter == 0)
-            flag = true;
-        return flag;
-    }
-
-    public String getoutput(int counter)
-    {
-        String output;
-        if(counter == 0)
-            output = ("There were no errors found.");
-        else
-            output = ("There was an error");
+        String output = this.output;
 
         return output;
     }

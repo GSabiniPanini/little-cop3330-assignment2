@@ -11,10 +11,8 @@ public class Solution27
 
         ei.readdata();
         int counter = ei.validateInput(ei.fname, ei.lname, ei.zip, ei.id);
-        if(ei.isoutput(counter))
-        {
-            String output = ei.getoutput(counter);
-            System.out.println(output);
-        }
+
+        String output = ei.getoutput();
+        System.out.println(output);
     }
 }
