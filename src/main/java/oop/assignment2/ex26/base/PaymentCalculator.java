@@ -26,13 +26,8 @@ public class PaymentCalculator
 
     public int calculateMonthsUntilPaidOff()
     {
-        System.out.println("bal: " + this.bal);
-        System.out.println("mp: " + this.mp);
-        System.out.println("APR: " + this.APR);
         double i = this.APR / 365;
-        System.out.println("i: " + i);
         double y = Math.pow((1.0 + i), 30);
-        System.out.println("y: " + y);
         double doublemonth = -(1.00 / 30.00) * Math.log(1.00 + (this.bal / this.mp) * (1.00 - y)) / Math.log(1.00 + i);
         int month = (int) doublemonth;
         if(month / 1 > 0)
