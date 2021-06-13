@@ -1,0 +1,18 @@
+@startuml
+
+class Solution28
+{
+    system.out.println(sum)
+}
+
+class AddingLoop
+{
+    int input[5]
+    int sum
+    + readinput()
+    + compute()
+}
+
+Solution28 *-- AddingLoop
+
+@enduml
